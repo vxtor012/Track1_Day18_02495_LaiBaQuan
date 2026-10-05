@@ -1,48 +1,91 @@
 # PROTOTYPE LINKS & TEST CONTEXT (NHÓM TUNG TUNG TUNG SAHUR)
 
-> **Tài liệu truy cập Prototype chung của nhóm**: Chứa đường link nguyên mẫu của cả 3 Option và kịch bản kiểm thử đã được chuẩn hóa cho bài toán Quiz VLearn.
+> **Tài liệu truy cập Web Prototype chính thức của nhóm**: Phiên bản hoàn chỉnh tích hợp 4 cơ chế Human–AI, hỗ trợ đầy đủ chế độ Lý thuyết (Slide) và Thực hành (Lab) trên 3 chủ đề kiến thức thực tế, kèm hệ thống Logger tự động đo lường thời gian thực.
 
 ---
 
-## 1. ĐƯỜNG LINK TRẢI NGHIỆM PROTOTYPE (A / B / C)
+## 1. HƯỚNG DẪN TRUY CẬP VÀ MỞ PROTOTYPE
 
-- **Công cụ xây dựng:** Figma / Web Mockup
-- **Đường link chung (hoặc link từng Option):**
-  - **Link Figma Prototype chung của nhóm:** `[Dán link Figma của nhóm tại đây - Nhớ bật quyền Anyone with the link can VIEW]`
-  - **Option A (In-line Term Inspector):** `[Dán link frame Option A]`
-  - **Option B (30s Diagnostic Micro-Check):** `[Dán link frame Option B]`
-  - **Option C (Proactive Context Action Card):** `[Dán link frame Option C]`
+- **Công cụ xây dựng:** **Web Micro-Prototype (HTML5 / Vanilla CSS / Vanilla JavaScript thuần)**
+- **Đường dẫn mở trực tiếp (Offline / Local):**
+  - Mở file [`prototype/index.html`](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/prototype/index.html) bằng bất kỳ trình duyệt nào (Chrome, Edge, Firefox, Safari).
+- **Mã nguồn nguyên mẫu:**
+  - Nằm trực tiếp tại file [`prototype/index.html`](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/prototype/index.html) trong repository này.
+- **Trang chủ Facilitator:** Mở file không có hash hoặc truy cập URL `#` để vào màn hình chính chọn chủ đề.
 
----
+### Danh mục URL Hash trực tiếp cho phiên User Testing:
 
-## 2. KỊCH BẢN THỬ NGHIỆM ĐÃ CHUẨN HÓA (CHẶNG 5)
+| Option | Tên cơ chế | URL chế độ Lý thuyết (Slide) | URL chế độ Thực hành (Lab) |
+| :---: | :--- | :--- | :--- |
+| **A** | **Chỉ vào chỗ kẹt** *(In-line Term/Block Inspector)* | `prototype/index.html#context/theory/A` | `prototype/index.html#context/lab/A` |
+| **B** | **Chẩn đoán 3 câu** *(Diagnostic Micro-Check)* | `prototype/index.html#context/theory/B` | `prototype/index.html#context/lab/B` |
+| **C** | **AI gợi ý chủ động** *(Proactive Action Card)* | `prototype/index.html#context/theory/C` | `prototype/index.html#context/lab/C` |
+| **D** | **Hỏi người thật** *(Context-Attached Support)* | `prototype/index.html#context/theory/D` | `prototype/index.html#context/lab/D` |
 
-### Bối cảnh bài kiểm tra mẫu (Common Context & Data Fixture)
-- **Câu hỏi Quiz mẫu trên VLearn:**  
-  *"Khi khởi tạo một Virtual Private Cloud (VPC) với dải địa chỉ CIDR `10.0.0.0/16`, phát biểu nào sau đây là ĐÚNG về Subnet và số lượng IP khả dụng?"*
-- **4 Lựa chọn:**
-  - A. Dải mạng này chỉ cấp phát được tối đa 256 địa chỉ IP cho toàn bộ VPC.
-  - B. Dải mạng cung cấp 65,536 địa chỉ IP, và các Subnet con có thể chia theo tiền tố `/24` để phân chia mạng. *(Đáp án đúng)*
-  - C. Subnet bắt buộc phải có cùng kích thước tiền tố `/16` với VPC cha. *(Học viên chọn nhầm câu này và bị báo sai)*
-  - D. Không thể gán Subnet cho VPC khi đã chỉ định CIDR.
+*(Khuyên dùng: Khi test với người ngoài nhóm, nên bắt đầu bằng chủ đề **Context Window - Slide 12** để tester làm quen với khái niệm)*.
 
 ---
 
-### Câu hỏi Relevant Context (2 phút đầu phiên test):
-> *"Gần đây khi làm bài tập hoặc Quiz trên VLearn mà gặp phải một thuật ngữ kỹ thuật khó hiểu hoặc làm sai câu hỏi, việc đầu tiên bạn thường làm là gì?"*
+## 2. BỐI CẢNH DỮ LIỆU & VÍ DỤ TRONG PROTOTYPE (DATA FIXTURES)
+
+Prototype tích hợp sẵn **3 chủ đề bài học thực tế** của chương trình đào tạo:
+
+### 1. Chủ đề Context Window (`context`)
+- **Tab Slide 12 (Lý thuyết)**:
+  - *Nội dung*: Công thức `context window ≥ token input + token output`. Vì sao chat dài thì model quên lời dặn ở đầu (phần cũ bị cắt bỏ).
+  - *Câu hỏi kiểm tra nhanh*: *"Model có context window 8.000 token. Prompt + tài liệu dài 7.500 token, yêu cầu tóm tắt khoảng 1.000 token. Điều gì dễ xảy ra nhất?"*  
+    ➔ **Đáp án đúng:** Bản tóm tắt bị cắt giữa chừng (7.500 + 1.000 = 8.500 > 8.000).
+- **Tab Task 2 (Lab Chatbot nhớ hội thoại)**:
+  - *Nội dung*: Hoàn thiện hàm `trim_history(messages, max_tokens=8000, reserve=1000)` trong file `chat.py`. Ngân sách input = `max_tokens - reserve`.
+  - *Checkpoint*: Lịch sử chat đang 7.600 token, hàm `trim_history` nên làm gì để không lỗi `context length exceeded`?
+
+### 2. Chủ đề ReAct Agent (`react`)
+- **Tab Slide 9 (Lý thuyết)**:
+  - *Nội dung*: Vòng lặp `Thought → Action → Observation → Answer`. Model trả về `tool_calls`, ứng dụng chạy hàm (Action), kết quả gửi lại qua `role: "tool"` (Observation).
+  - *Câu hỏi kiểm tra nhanh*: *"Trong vòng ReAct, Observation là gì?"*  
+    ➔ **Đáp án đúng:** Kết quả tool được gửi lại cho model (message role "tool").
+- **Tab Task 2.2 (Lab Lập trình ReAct Loop)**:
+  - *Nội dung*: Hoàn thiện vòng `while step < MAX_STEPS` trong `agent.py`. Bắt `tool_calls` và thực thi tool.
+
+### 3. Chủ đề Gradient Descent (`gd`)
+- **Tab Slide 7 (Lý thuyết)**:
+  - *Nội dung*: Công thức cập nhật trọng số $w \leftarrow w - \eta \cdot \frac{\partial L}{\partial w}$. Gradient chỉ hướng dốc lên, dấu trừ để đi xuống dốc, $\eta$ là learning rate.
+  - *Câu hỏi kiểm tra nhanh*: *"Cho $L(w) = w^2$, đang ở $w = 3, \eta = 0.1$. Sau một bước gradient descent, $w$ mới bằng bao nhiêu?"*  
+    ➔ **Đáp án đúng:** $2.4$ ($\frac{\partial L}{\partial w} = 2 \times 3 = 6 \rightarrow w = 3 - 0.1 \times 6 = 2.4$).
+- **Tab Task 2 (Lab Chọn Learning Rate)**:
+  - *Nội dung*: Thử 3 giá trị `lr` và phát hiện hiện tượng loss tăng vọt qua các epoch khi đặt `lr = 1.0`.
+
+---
+
+## 3. 4 CƠ CHẾ TƯƠNG TÁC HUMAN–AI ĐÃ CÀI ĐẶT
+
+1. **Option A (Chỉ vào chỗ kẹt)**:
+   - Bấm nút `Tôi bị kẹt ở đây` ➔ Chạm vào khối văn bản/code bị kẹt ➔ Chọn loại câu hỏi (*"Giải thích dễ hơn"*, *"Cho ví dụ"*, *"Ôn kiến thức nền"*) hoặc tự gõ câu hỏi ➔ AI trả lời ngay bên dưới khối văn bản đó.
+2. **Option B (Chẩn đoán 3 câu)**:
+   - Bấm nút `Tôi bị kẹt ở đây` ➔ Mở side panel bên phải ➔ AI hỏi lần lượt 3 câu trắc nghiệm nhanh ➔ Thẻ chẩn đoán hiện ra chỉ rõ học viên đang hiểu sai chỗ nào ➔ Trả lời đúng chỗ ngứa. Có nút *"Chẩn đoán này chưa đúng với mình"* để học viên tự chọn lại topic.
+3. **Option C (AI gợi ý chủ động)**:
+   - AI theo dõi tín hiệu (học viên dừng quá 12s, hoặc lật qua lại slide nhiều lần) ➔ Tự động trượt thẻ `icard nudge` ra màn hình. Có mục *"Vì sao AI nghĩ vậy"* minh bạch lý do suy đoán. Có nút *"Bỏ qua"* và nút *"Không hiển thị lại"*.
+4. **Option D (Hỏi người thật kèm bối cảnh)**:
+   - Khi AI không giải quyết được: Bấm *"Hỏi người thật"* ➔ Mở modal tự động đính kèm các thẻ bối cảnh (Context Chips: Slide đang học, thời gian dừng, lỗi gặp phải). Học viên chọn gửi tới `TA Hà (Mentor)` hoặc `Tuấn (Nhóm Lab)` ➔ Chuyển sang khung chat theo dõi tiến độ.
+
+---
+
+## 4. KỊCH BẢN THỬ NGHIỆM ĐÃ CHUẨN HÓA (DÀNH CHO CHẶNG 6)
+
+### Câu hỏi Relevant Context (2 phút đầu):
+> *"Gần đây khi học bài hoặc làm Lab trên VLearn mà gặp phải một đoạn lý thuyết khó hiểu hoặc chạy code báo lỗi, bạn thường làm gì đầu tiên để giải quyết?"*
 
 ### Outcome Task (Giao cho tester khi mở prototype):
-> *"Giả sử bạn đang làm bài kiểm tra trên VLearn và vừa chọn sai câu hỏi về VPC/CIDR này. Mục tiêu của bạn là tìm ra lý do mình sai và chọn lại đáp án đúng để hoàn thành bài test. Bạn hãy thao tác tự nhiên với giao diện trên màn hình."*  
-*(⚠️ Lưu ý người facilitate: Tuyệt đối không chỉ cho tester bấm vào nút nào! Để họ tự nhìn và bấm).*
+> *"Giả sử bạn đang tự học slide Context Window này và cảm thấy bối rối không hiểu vì sao khi chat dài thì model lại quên lời dặn ở đầu. Mục tiêu của bạn là tìm hiểu để trả lời đúng câu hỏi trắc nghiệm ở cuối trang. Bạn hãy thao tác tự nhiên với màn hình."*  
+*(⚠️ Lưu ý người facilitate: Tuyệt đối không chỉ tester bấm vào đâu! Hãy để họ tự nhìn và thao tác).*
 
 ### 5 Tiêu điểm quan sát (Observation Focus):
-1. **First action:** Mắt và tay họ click vào đâu đầu tiên khi thấy màn hình kết quả sai?
-2. **Hesitation / Bối rối:** Chỗ nào họ khựng lại, đọc đi đọc lại hoặc bấm nhầm?
-3. **Evidence:** Họ có đọc phần giải thích của AI không hay lướt qua luôn?
-4. **Control & Recovery:** Họ có tìm thấy và bấm nút đóng/bỏ qua/thử lại không?
-5. **Trade-off:** Sau khi thử cả 3 options, họ chọn A, B hay C và vì sao?
+1. **First action:** Tester bấm vào đâu đầu tiên (đọc bài, bấm nút trợ giúp, hay làm câu hỏi nhanh)?
+2. **Hesitation:** Chỗ nào tester dừng lại lâu, đọc đi đọc lại hoặc thể hiện sự ngập ngừng?
+3. **Evidence:** Tester có đọc phần giải thích "Vì sao AI nghĩ vậy" / trích dẫn nguồn không?
+4. **Control & Recovery:** Tester có biết cách đóng/hủy/chọn lại khi gợi ý không đúng ý không?
+5. **Trade-off:** Sau khi thử qua các options, tester chọn phương án nào và chấp nhận đánh đổi điều gì?
 
-### 3 Câu Cứu hộ khi Tester bị nghẽn:
-- *"Bạn cứ nói to những suy nghĩ đang xuất hiện trong đầu nhé."*
-- *"Bây giờ bạn đang muốn làm gì tiếp theo?"*
-- *"Theo suy nghĩ tự nhiên của bạn, chỗ này nó nên phản hồi ra sao?"*
+### Tính năng Logging tự động dành cho Facilitator:
+- Trong quá trình test, hệ thống tự động ghi lại từng mili-giây hành vi của tester.
+- Ở thanh Prototype Bar (góc trên) hoặc khi kết thúc phiên: Click vào nút **`Log`** ➔ Xem bảng phân tích thời gian ➔ Click **`Copy CSV`** để dán dữ liệu khách quan vào file `prototype-feedback-note.md`!
