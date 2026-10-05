@@ -6,7 +6,7 @@
 
 ## 1. MA TRẬN SO SÁNH 3 PHIÊN PHẢN HỒI (CROSS-TESTER SYNTHESIS)
 
-| Nội dung quan sát | Phiên 1 (Tester 1)<br>*Facilitator: Lại Bá Quân* | Phiên 2 (Tester 2)<br>*Facilitator: [Thành viên 2]* | Phiên 3 (Tester 3)<br>*Facilitator: [Thành viên 3]* | Phiên 4 (Tester 4)<br>*Facilitator: [Thành viên 4]* | Pattern chung hoặc Sự khác biệt nổi bật |
+| Nội dung quan sát | Phiên 1 (Tester 1)<br>*Facilitator: Lại Bá Quân (Lead Framework)* | Phiên 2 (Tester 2)<br>*Facilitator: Minh Khánh (Lead Opt A)* | Phiên 3 (Tester 3)<br>*Facilitator: Việt Anh (Lead Opt B)* | Phiên 4 (Tester 4)<br>*Facilitator: Quang Huy (Lead Opt C)* | Pattern chung hoặc Sự khác biệt nổi bật |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **First Action** | | | | | |
 | **Breakdown chính (Điểm nghẽn)** | | | | | |
