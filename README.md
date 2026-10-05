@@ -57,8 +57,8 @@
 ## 5. PROTOTYPE FEEDBACK & GROUP SYNTHESIS
 - **Ghi chép phiên cá nhân phụ trách (Tester 1):** Xem chi tiết tại [prototype-feedback-note.md](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/prototype-feedback-note.md).
 - **Bảng tổng hợp phản hồi 4 testers của nhóm:** Xem chi tiết tại [group-feedback-synthesis.md](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/group-feedback-synthesis.md).
-- **Quyết định Next Change chung của nhóm:** *(Sẽ được nhóm chốt sau khi hoàn thành Chặng 6 & 7)*.
-- **Những điều Still Unproven (Chưa được chứng minh):** *(Sẽ được nhóm chốt sau khi hoàn thành Chặng 6 & 7)*.
+- **Quyết định Next Change chung của nhóm:** Lấy tương tác chạm chọn vùng kẹt của **Option A** làm chủ đạo, tích hợp cơ chế kích hoạt thông minh khi làm sai Quiz (rút kinh nghiệm từ Opt C) và micro-diagnostic 1 câu ngắn (~10s) thay vì 3 câu dài (tinh gọn từ Opt B). Tự động đề xuất leo thang sang người thật (**Option D**) khi làm sai quiz quá 2 lần.
+- **Những điều Still Unproven (Chưa được chứng minh):** Chưa kiểm chứng được trên các bài lab lập trình code dài/lỗi runtime; chưa đo lường được mức độ ghi nhớ kiến thức dài hạn (Retention); và mẫu thử 4 người còn nhỏ, chưa phản ánh đầy đủ áp lực học sát hạn nộp bài trong thực tế.
 
 ---
 
