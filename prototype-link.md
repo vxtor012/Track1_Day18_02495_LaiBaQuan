@@ -58,15 +58,16 @@ Prototype tích hợp sẵn **3 chủ đề bài học thực tế** của chư�
 ---
 
 ## 3. 4 CƠ CHẾ TƯƠNG TÁC HUMAN–AI ĐÃ CÀI ĐẶT
+*(Phân công 4 thành viên: Quân - Opt A, Việt Anh - Opt B, Minh Khánh - Opt C, Quang Huy - Opt D)*
 
-1. **Option A (Chỉ vào chỗ kẹt)**:
-   - Bấm nút `Tôi bị kẹt ở đây` ➔ Chạm vào khối văn bản/code bị kẹt ➔ Chọn loại câu hỏi (*"Giải thích dễ hơn"*, *"Cho ví dụ"*, *"Ôn kiến thức nền"*) hoặc tự gõ câu hỏi ➔ AI trả lời ngay bên dưới khối văn bản đó.
-2. **Option B (Chẩn đoán 3 câu)**:
-   - Bấm nút `Tôi bị kẹt ở đây` ➔ Mở side panel bên phải ➔ AI hỏi lần lượt 3 câu trắc nghiệm nhanh ➔ Thẻ chẩn đoán hiện ra chỉ rõ học viên đang hiểu sai chỗ nào ➔ Trả lời đúng chỗ ngứa. Có nút *"Chẩn đoán này chưa đúng với mình"* để học viên tự chọn lại topic.
-3. **Option C (AI gợi ý chủ động)**:
-   - AI theo dõi tín hiệu (học viên dừng quá 12s, hoặc lật qua lại slide nhiều lần) ➔ Tự động trượt thẻ `icard nudge` ra màn hình. Có mục *"Vì sao AI nghĩ vậy"* minh bạch lý do suy đoán. Có nút *"Bỏ qua"* và nút *"Không hiển thị lại"*.
-4. **Option D (Hỏi người thật kèm bối cảnh)**:
-   - Khi AI không giải quyết được: Bấm *"Hỏi người thật"* ➔ Mở modal tự động đính kèm các thẻ bối cảnh (Context Chips: Slide đang học, thời gian dừng, lỗi gặp phải). Học viên chọn gửi tới `TA Hà (Mentor)` hoặc `Tuấn (Nhóm Lab)` ➔ Chuyển sang khung chat theo dõi tiến độ.
+1. **Option A (Chỉ vào chỗ kẹt - Quân lead)**:
+   - Bấm nút `Tôi vẫn chưa hiểu` ➔ Màn hình hiện Pickbar ở dưới, các đoạn sáng viền vàng ➔ Chạm vào khối văn bản/code bị kẹt ➔ Chọn kiểu giúp (*"Giải thích dễ hơn"*, *"Cho ví dụ"*, *"Ôn kiến thức nền"*) hoặc tự gõ câu hỏi ➔ Bấm `Gửi` ➔ Thẻ AI `icard` xuất hiện ngay bên dưới đoạn văn bản đó kèm trích dẫn lý thuyết liên quan.
+2. **Option B (Chẩn đoán 3 câu - Việt Anh lead)**:
+   - Bấm nút `Tôi vẫn chưa hiểu` ➔ Mở side panel "Trợ giảng AI" bên phải ➔ AI hỏi lần lượt 3 câu trắc nghiệm nhanh 1 chạm (~1 phút) ➔ Thẻ kết quả chẩn đoán `dcard` hiện ra kèm thước đo độ chắc chắn (*Cao, Trung bình, Thấp*), chỉ rõ học viên đang hổng ở kiến thức nào ➔ Trả lời đúng chỗ ngứa kèm đồ thị SVG minh hoạ. Có nút *"Không đúng chỗ"* để học viên tự chọn lại chủ đề muốn ôn.
+3. **Option C (AI gợi ý chủ động - Minh Khánh lead)**:
+   - AI tự động theo dõi tín hiệu (học viên dừng quá 12s, lật qua lại slide nhiều lần, hoặc vừa trả lời sai câu hỏi kiểm tra) ➔ Tự động trượt thẻ `icard.nudge` ra màn hình ghim vào đoạn nghi ngờ kẹt. Có các chip dữ liệu hành vi thực tế, mục giải trình minh bạch *"Vì sao AI nghĩ vậy"* kèm thang đo độ tin cậy. Có nút *"Đúng chỗ, đã rõ hơn"*, *"Không phải chỗ này"* (để chạm đoạn kẹt thực tế), và nút *"Tắt tự nhắc trong buổi này"*.
+4. **Option D (Hỏi người thật kèm bối cảnh - Quang Huy lead)**:
+   - Bấm nút `Tôi vẫn chưa hiểu` ➔ Mở modal "Nhờ người hỗ trợ" tự động gom các thẻ bối cảnh (Context Chips: Slide đang học, thời gian dừng, số lần trả lời sai). Học viên tick/untick từng dòng để bảo mật thông tin, chọn người gửi (`TA Hà - Mentor lớp` hoặc `Tuấn - Nhóm Lab`) ➔ Bấm `Gửi yêu cầu` ➔ Side panel theo dõi tiến trình gửi (*Đã gửi ➔ Đã xem ➔ Đang trả lời ➔ Đã trả lời* sau 15 giây mô phỏng, có nút *"Vẫn chưa hiểu"* để hỏi thêm).
 
 ---
 
@@ -80,9 +81,9 @@ Prototype tích hợp sẵn **3 chủ đề bài học thực tế** của chư�
 *(⚠️ Lưu ý người facilitate: Tuyệt đối không chỉ tester bấm vào đâu! Hãy để họ tự nhìn và thao tác).*
 
 ### 5 Tiêu điểm quan sát (Observation Focus):
-1. **First action:** Tester bấm vào đâu đầu tiên (đọc bài, bấm nút trợ giúp, hay làm câu hỏi nhanh)?
+1. **First action:** Tester bấm vào đâu đầu tiên (đọc bài, bấm nút `Tôi vẫn chưa hiểu`, hay làm câu hỏi nhanh)?
 2. **Hesitation:** Chỗ nào tester dừng lại lâu, đọc đi đọc lại hoặc thể hiện sự ngập ngừng?
-3. **Evidence:** Tester có đọc phần giải thích "Vì sao AI nghĩ vậy" / trích dẫn nguồn không?
+3. **Evidence:** Tester có đọc phần giải thích "Vì sao AI nghĩ vậy" / trích dẫn nguồn bài học không?
 4. **Control & Recovery:** Tester có biết cách đóng/hủy/chọn lại khi gợi ý không đúng ý không?
 5. **Trade-off:** Sau khi thử qua các options, tester chọn phương án nào và chấp nhận đánh đổi điều gì?
 

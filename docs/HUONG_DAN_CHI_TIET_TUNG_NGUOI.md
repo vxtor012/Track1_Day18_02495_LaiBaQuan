@@ -1,141 +1,121 @@
 # HƯỚNG DẪN CHI TIẾT TỪNG NGƯỜI (NHÓM TUNG TUNG TUNG SAHUR)
+*(Giai đoạn Thực thi User Testing & Hoàn tất Nộp bài Lab Day 18)*
 
-> **Phân công nhiệm vụ chính thức**:  
-> - 👑 **Lại Bá Quân (2A202602495)**: Lead Shared Framework, Common Context, UI Components, Reset Path & Điều phối kịch bản  
-> - 🎨 **Nguyễn Thị Minh Khánh (2A202602546)**: Triển khai Option A (In-line Term Inspector)  
-> - 🧩 **Đỗ Lê Việt Anh (2A202602491)**: Triển khai Option B (30s Diagnostic Micro-Check)  
-> - 🤖 **Nguyễn Quang Huy (2A202602421)**: Triển khai Option C (Proactive Context Action Card)  
-
----
-
-## 📌 BẢNG TỔNG HỢP VAI TRÒ & DEADLINE
-
-| Thành viên | Trách nhiệm Prototype (Chặng 4 · 80p) | Trách nhiệm Thử nghiệm (Chặng 6 · 20p) | Sản phẩm cá nhân phải nộp |
-| :--- | :--- | :--- | :--- |
-| **1. Lại Bá Quân** | Dựng khung Common Context (Figma), Data Fixture Quiz mẫu, components, nút Reset & ghép luồng chung | Facilitate **Tester 1** (cho thử A/B/C) ➔ Ghi chép cá nhân | Repo cá nhân đầy đủ 6 files chuẩn |
-| **2. Minh Khánh** | Dựng tương tác **Option A**: Popover tra cứu từ khóa tức thì khi click vào text (<5s) | Facilitate **Tester 2** (cho thử A/B/C) ➔ Ghi chép cá nhân | Repo cá nhân đầy đủ 6 files chuẩn |
-| **3. Việt Anh** | Dựng tương tác **Option B**: Modal 2 câu trắc nghiệm 1 chạm chẩn đoán lỗi sai (<45s) | Facilitate **Tester 3** (cho thử A/B/C) ➔ Ghi chép cá nhân | Repo cá nhân đầy đủ 6 files chuẩn |
-| **4. Quang Huy** | Dựng tương tác **Option C**: Thẻ Action Card tự động trượt ra phân tích lỗi khi submit sai | Facilitate **Tester 4** (cho thử A/B/C) ➔ Ghi chép cá nhân | Repo cá nhân đầy đủ 6 files chuẩn |
+> 🎉 **TÌNH TRẠNG HIỆN TẠI**: Nhóm đã hoàn thành trọn vẹn **Chặng 1, 2, 3 và Chặng 4 (Xây dựng Micro-Prototype hoàn chỉnh tại [`prototype/index.html`](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/prototype/index.html))**.  
+> Prototype hỗ trợ đầy đủ 4 Options (A, B, C, D) trên 3 chủ đề thực tế (*Context Window*, *ReAct Agent*, *Gradient Descent*), có sẵn hệ thống **Logger đo lường thời gian thực** và nút **Copy CSV**.  
+> 
+> **PHÂN CÔNG PHỤ TRÁCH 4 OPTIONS (4 người – mỗi người 1 option):**
+> 1. **Lại Bá Quân (2A202602495)**: Phụ trách **Option A (Chỉ vào chỗ kẹt - Inline Inspector & Contextual Help)** & Facilitator Tester 1
+> 2. **Đỗ Lê Việt Anh (2A202602491)**: Phụ trách **Option B (Chẩn đoán 3 câu - 3-Question Diagnostic Micro-Quiz)** & Facilitator Tester 2
+> 3. **Nguyễn Thị Minh Khánh (2A202602546)**: Phụ trách **Option C (AI gợi ý chủ động - Proactive Nudge Card & Confidence Reasoning)** & Facilitator Tester 3
+> 4. **Nguyễn Quang Huy (2A202602421)**: Phụ trách **Option D (Hỏi người thật kèm bối cảnh - Human Escalation & Auto Context Docket)** & Facilitator Tester 4
 
 ---
 
-## 👤 1. HƯỚNG DẪN DÀNH CHO LẠI BÁ QUÂN (LEAD SHARED FRAMEWORK)
+## 📌 BẢNG PHÂN CÔNG THỬ NGHIỆM (CHẶNG 6 · 20–30 PHÚT)
 
-### Nhiệm vụ 1: Dựng nền tảng dùng chung trên Figma (15 phút đầu Chặng 4)
-1. **Tạo Figma chung**: Tạo 1 project Figma, đặt tên: `Track1_Day18_TungTungTungSahur_Prototypes`, mời Khánh, Anh, Huy vào với quyền **Editor**.
-2. **Dựng màn hình Common Context (70% shared core)**:
-   - Dựng giao diện bài học VLearn (chủ đề Cloud / VPC).
-   - Đặt câu hỏi Quiz mẫu chuẩn của nhóm:  
-     *“Khi khởi tạo một Virtual Private Cloud (VPC) với dải địa chỉ CIDR `10.0.0.0/16`, phát biểu nào sau đây là ĐÚNG về Subnet và số lượng IP khả dụng?”*
-   - Dựng 4 đáp án (A, B, C, D) như đã chuẩn hóa trong `prototype-link.md`.
-   - Tạo trạng thái người học chọn đáp án sai (Đáp án C) và bấm nút **"Nộp bài"** ➔ Hệ thống báo viền đỏ "Chưa chính xác!".
-3. **Dựng các Components chung**:
-   - Nút `[Bỏ qua / Đóng / Thử lại]` đồng bộ kích thước và màu sắc.
-   - Nút **`[🔄 Reset Prototype]`** đặt cố định ở góc trên bên phải màn hình để đưa về trạng thái đầu.
+Mỗi thành viên độc lập facilitate **1 Tester ngoài nhóm** (ưu tiên học viên khóa 3 hoặc bạn cùng lớp).  
+Mỗi Tester phải được trải nghiệm **ĐỦ CẢ 4 OPTIONS (A, B, C, D)** trên cùng một chủ đề (khuyên dùng chủ đề **Context Window - Slide 12** để các phiên test có cùng hệ quy chiếu so sánh):
 
-### Nhiệm vụ 2: Tích hợp và Rà soát Prototype (15 phút cuối Chặng 4)
-- Ghép 3 màn hình tương tác do Khánh (Option A), Anh (Option B) và Huy (Option C) vừa vẽ xong vào luồng chung.
-- Kiểm tra tính năng nút **Reset** trên cả 3 option.
-- Bật quyền Share: **"Anyone with the link can view"** và dán link vào file [prototype-link.md](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/prototype-link.md).
-
-### Nhiệm vụ 3: Độc lập Test với Tester 1 (Chặng 6)
-- Tìm 1 bạn học viên ngoài nhóm.
-- Đưa link prototype, đọc kịch bản Outcome Task (chỉ nói mục tiêu sửa lỗi, không chỉ nút bấm).
-- Cho Tester 1 trải nghiệm lần lượt: **Option A ➔ Reset ➔ Option B ➔ Reset ➔ Option C**.
-- Ghi chép ngay lập tức vào file [prototype-feedback-note.md](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/prototype-feedback-note.md) theo 4 lớp: *Observed / Interpreted / Decided / Still Unproven*.
-
-### Nhiệm vụ 4: Chủ trì họp nhóm tổng hợp & Nộp bài (Chặng 7 & 8)
-- Mở cuộc họp ngắn 15 phút, yêu cầu Khánh, Anh, Huy báo cáo tóm tắt phiên test của họ.
-- Điền đầy đủ vào bảng [group-feedback-synthesis.md](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/group-feedback-synthesis.md) và chốt **1 Group Next Change**.
-- Đẩy commit repo cá nhân lên GitHub.
+| Thành viên | Option phụ trách chính | Đối tượng Tester | Đường link mở test cho Tester | Nhiệm vụ chính trong phiên |
+| :--- | :---: | :--- | :--- | :--- |
+| **1. Lại Bá Quân** | **Option A** | **Tester 1** *(Học viên ngoài nhóm 1)* | `prototype/index.html#context/theory/A` | Cho thử A ➔ B ➔ C ➔ D; quan sát kỹ Option A; bấm Log lấy CSV; điền [prototype-feedback-note.md](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/prototype-feedback-note.md) |
+| **2. Việt Anh** | **Option B** | **Tester 2** *(Học viên ngoài nhóm 2)* | `prototype/index.html#context/theory/B` | Cho thử B ➔ A ➔ C ➔ D; quan sát kỹ Option B; bấm Log lấy CSV; điền Feedback Note cá nhân của Anh |
+| **3. Minh Khánh** | **Option C** | **Tester 3** *(Học viên ngoài nhóm 3)* | `prototype/index.html#context/theory/C` | Cho thử C ➔ A ➔ B ➔ D; quan sát kỹ Option C; bấm Log lấy CSV; điền Feedback Note cá nhân của Khánh |
+| **4. Quang Huy** | **Option D** | **Tester 4** *(Học viên ngoài nhóm 4)* | `prototype/index.html#context/theory/D` | Cho thử D ➔ A ➔ B ➔ C; quan sát kỹ Option D; bấm Log lấy CSV; điền Feedback Note cá nhân của Huy |
 
 ---
 
-## 👤 2. HƯỚNG DẪN DÀNH CHO NGUYỄN THỊ MINH KHÁNH (LEAD OPTION A)
+## 🎯 CÁC TÍNH NĂNG VÀ VÍ DỤ CỤ THỂ TRONG PROTOTYPE KHI ĐEM ĐI TEST
 
-### Nhiệm vụ 1: Xây dựng Option A (In-line Term Inspector) (Chặng 4)
-- **Cơ chế**: Tra cứu tức thì từ khóa viết tắt tại chỗ theo yêu cầu của người dùng (User-initiated, không tự ý nhảy ra).
-- **Thực hiện trên Figma (sử dụng khung của Quân)**:
-  1. Nhân bản (Duplicate) khung màn hình Quiz từ Quân.
-  2. Thêm chỉ báo thị giác (Visual affordance): Gạch chân đứt nét màu xanh nhạt hoặc icon `[?]` nhỏ ngay cạnh các từ khóa: `"CIDR 10.0.0.0/16"` và `"VPC"`.
-  3. Dựng trạng thái Popover (Tooltip nổi) khi người dùng click vào từ khóa:
-     - **Tiêu đề**: *CIDR Block /16*
-     - **Giải thích nhanh**: *“Đại diện cho dải mạng lớn gồm 65,536 địa chỉ IP. Trong bài lab này, VPC đóng vai trò là mạng bao quanh toàn bộ hệ thống.”*
-     - **Ví dụ thực tế**: *“Một Subnet con thường chia theo /24 (256 IP) để cấp cho các máy ảo con.”*
-     - **Nút điều khiển**: Nút icon `[x]` ở góc popover hoặc bấm ra ngoài để đóng ngay lập tức.
-- **Thời gian hoàn thành**: 40 phút. Sau khi xong, click thử nghiệm chéo Option B của Anh và Option C của Huy.
-
-### Nhiệm vụ 2: Độc lập Test với Tester 2 (Chặng 6)
-- Hẹn trước 1 bạn ngoài nhóm (Tester 2).
-- Mở link prototype chung, cho Tester 2 trải nghiệm **cả 3 Option A, B, C** (mỗi option 3-4 phút).
-- Quan sát xem họ có nhìn thấy từ gạch chân để click không, có đọc popover không.
-- Tự hoàn thành file `prototype-feedback-note.md` trong repo cá nhân của Khánh.
-
-### Nhiệm vụ 3: Tham gia họp nhóm & Nộp bài (Chặng 7 & 8)
-- Cung cấp kết quả của Tester 2 cho Quân điền vào ma trận nhóm.
-- Đẩy repo cá nhân `Track1_Day18_2A202602546_NguyenThiMinhKhanh`.
+### Dữ liệu bài học mẫu được dùng trong bài test:
+- **Chủ đề**: Context Window (Khái niệm LLM & Chatbot) ➔ Tab **Slide 12 (Lý thuyết)**.
+- **Nội dung slide**:
+  - `context window ≥ token input + token output`
+  - Input = system prompt + lịch sử chat + tài liệu + câu hỏi.
+  - Vượt giới hạn ➔ Phần cũ bị cắt bỏ, hoặc câu trả lời bị cắt ngang.
+- **Câu hỏi kiểm tra nhanh ở cuối slide**:  
+  *"Model có context window 8.000 token. Prompt + tài liệu dài 7.500 token, yêu cầu tóm tắt khoảng 1.000 token. Điều gì dễ xảy ra nhất?"*  
+  *(Đáp án đúng: "Bản tóm tắt bị cắt giữa chừng" - vì 7.500 + 1.000 = 8.500 > 8.000).*
 
 ---
 
-## 👤 3. HƯỚNG DẪN DÀNH CHO ĐỖ LÊ VIỆT ANH (LEAD OPTION B)
+### Cách tester tương tác với 4 Options trong Prototype:
 
-### Nhiệm vụ 1: Xây dựng Option B (30s Diagnostic Micro-Check) (Chặng 4)
-- **Cơ chế**: AI chẩn đoán 2 câu trắc nghiệm 1 chạm để bóc tách chỗ hiểu sai trước khi giải thích (Human–AI Co-Creation).
-- **Thực hiện trên Figma (sử dụng khung của Quân)**:
-  1. Nhân bản khung màn hình Quiz từ Quân.
-  2. Tại trạng thái Quiz báo sai, thiết kế 1 nút bấm nổi bật: **`[💡 Chẩn đoán lỗi sai trong 30s]`** đặt cạnh kết quả sai.
-  3. Khi click nút này, hiện Modal popup / Bottom sheet:
-     - **Bước 1 (Câu hỏi 1)**: *"Bạn đang phân vân nhất ở điểm nào?"*
-       - [Nút chọn A]: *Số lượng IP của dải mạng /16*
-       - [Nút chọn B]: *Quan hệ giữa Subnet con và VPC cha*
-     - **Bước 2 (Câu hỏi 2)**: *"Trong bài lab, bạn dự định tạo Subnet kiểu gì?"*
-       - [Nút chọn A]: *Chia nhỏ dải mạng thành nhiều lớp mạng /24*
-       - [Nút chọn B]: *Để nguyên cả dải /16 cho 1 máy ảo duy nhất*
-  4. Trạng thái kết luận chẩn đoán:
-     - Hiển thị thông điệp trúng đích: *“Chẩn đoán: Bạn đang nhầm lẫn giữa quy mô của VPC (/16) và Subnet (/24). Một VPC lớn chứa được nhiều Subnet nhỏ. Hãy thử chọn lại đáp án B nhé!”*
-  5. **Nút thoát (Recovery)**: Luôn có nút `[Bỏ qua chẩn đoán / Đóng]` ở mọi bước để người học không bị kẹt.
-- **Thời gian hoàn thành**: 40 phút. Sau khi xong, click thử nghiệm chéo Option A của Khánh và Option C của Huy.
+#### 1. Option A (Chỉ vào chỗ kẹt - In-line Inspector · Quân lead):
+- Mở link: `prototype/index.html#context/theory/A`
+- **Thao tác**: Người học bấm nút **`Tôi vẫn chưa hiểu`** ➔ Màn hình hiện Pickbar ở dưới, các đoạn nội dung/code sáng viền vàng ➔ Người học bấm chạm vào khối công thức hoặc đoạn văn bản khó hiểu ➔ Chọn loại trợ giúp (*"Giải thích dễ hơn"*, *"Cho ví dụ"*, *"Ôn kiến thức nền"*) hoặc tự gõ câu hỏi ➔ Bấm **`Gửi`** ➔ Thẻ AI `icard` xuất hiện ngay bên dưới đoạn văn bản đó để giải thích kèm link `Nguồn: Slide 12`.
+- Bấm nút `Làm lại` ở thanh trên cùng (Prototype bar) để reset trước khi chuyển option.
 
-### Nhiệm vụ 2: Độc lập Test với Tester 3 (Chặng 6)
-- Hẹn 1 bạn ngoài nhóm (Tester 3).
-- Cho Tester 3 trải nghiệm đủ cả A, B, C.
-- Quan sát: Họ có ngại bấm 2 câu trắc nghiệm không? Họ có thấy câu hỏi chẩn đoán giúp họ ngộ ra lỗi sai không?
-- Tự hoàn thành file `prototype-feedback-note.md` trong repo cá nhân của Anh.
+#### 2. Option B (Chẩn đoán 3 câu - Diagnostic Micro-Check · Việt Anh lead):
+- Mở link: `prototype/index.html#context/theory/B`
+- **Thao tác**: Người học bấm nút **`Tôi vẫn chưa hiểu`** ➔ Mở side panel bên phải với tiêu đề *"Trợ giảng AI: Mình hỏi nhanh 3 câu (~1 phút) để tìm đúng phần kiến thức nền bạn đang thiếu nhé. Không chấm điểm, không lưu kết quả."* ➔ Người học trả lời lần lượt 3 câu trắc nghiệm 1 chạm:
+  - *Câu 1*: Token là gì? (*"Xin chào các bạn" chiếm bao nhiêu token?*)
+  - *Câu 2*: Input và Output dùng chung context window (*Context window 8.000, prompt 7.900 thì câu trả lời còn dài khoảng bao nhiêu?*)
+  - *Câu 3*: Bộ nhớ (*Chat rất dài, AI bắt đầu bỏ qua lời dặn ở đầu vì sao?*)
+  ➔ AI đưa ra thẻ kết quả chẩn đoán `dcard` chỉ rõ lỗ hổng tri thức, thang đo độ chắc chắn (*Cao/Trung bình/Thấp*), bài ôn có đồ thị SVG minh hoạ trực quan. Có nút *"Không đúng chỗ"* để người học tự chọn lại chủ đề nếu AI chẩn đoán sai.
+- Bấm nút `Làm lại` trước khi chuyển option.
 
-### Nhiệm vụ 3: Tham gia họp nhóm & Nộp bài (Chặng 7 & 8)
-- Đóng góp insight của Tester 3 vào cuộc họp tổng hợp.
-- Đẩy repo cá nhân `Track1_Day18_2A202602491_DoLeVietAnh`.
+#### 3. Option C (AI gợi ý chủ động - Proactive Nudge Card · Minh Khánh lead):
+- Mở link: `prototype/index.html#context/theory/C`
+- **Thao tác**: Người học đọc bài bình thường. Hệ thống có bộ đếm thời gian: nếu người học dừng lại quá **12 giây** trên slide hoặc vừa trả lời sai câu hỏi kiểm tra, thẻ gợi ý AI `icard nudge` sẽ **tự động trượt ra** ghim vào đúng khối nội dung nghi ngờ kẹt.
+- **Điểm nổi bật**: Thẻ có các chip tín hiệu hành vi thực tế (*"4 phút ở slide này"*, *"Lật qua lại slide 11 ↔ 12 hai lần"*, *"6/10 học viên bí ở đây"*), mục mở rộng **`Vì sao AI nghĩ vậy?`** kèm thang đo độ tin cậy.
+- Người học có nút *"Đúng chỗ, đã rõ hơn"*, nút *"Không phải chỗ này"* (mở danh sách đoạn để chọn lại), và link *"Tắt tự nhắc trong buổi này"*.
+- Bấm nút `Làm lại` trước khi chuyển option.
 
----
-
-## 👤 4. HƯỚNG DẪN DÀNH CHO NGUYỄN QUANG HUY (LEAD OPTION C)
-
-### Nhiệm vụ 1: Xây dựng Option C (Proactive Context Action Card) (Chặng 4)
-- **Cơ chế**: AI chủ động phân tích lỗi sai và đẩy thẻ gợi ý ra màn hình ngay khi submit bài sai (AI Proactive, User Reviews/Dismisses).
-- **Thực hiện trên Figma (sử dụng khung của Quân)**:
-  1. Nhân bản khung màn hình Quiz từ Quân.
-  2. Dựng trạng thái: Ngay khi user bấm nút "Nộp bài" và bị báo sai, ở thanh sidebar bên phải **tự động trượt ra (slide-in) một Thẻ gợi ý (Action Card)**:
-     - **Header**: `[🤖 AI Tutor Assistance - Tự động phát hiện điểm nghẽn]`
-     - **Phân tích lỗi**: *“Dựa vào việc bạn chọn đáp án C, hệ thống nhận thấy bạn đang nghĩ Subnet phải có cùng dải /16 với VPC.”*
-     - **Gợi ý hành động**: *“Trong thực tế Cloud, VPC /16 là mạng cha bao quanh, còn Subnet là các mạng con được chia nhỏ theo tiền tố /24.”*
-     - **Hai nút bấm quyết định (Control)**:
-       - Nút chính: `[Áp dụng gợi ý & Chọn lại đáp án]`
-       - Nút phụ: `[Bỏ qua / Không hiển thị lại]` (để đóng thẻ nếu người học cảm thấy bị làm phiền).
-- **Thời gian hoàn thành**: 40 phút. Sau khi xong, click thử nghiệm chéo Option A của Khánh và Option B của Anh.
-
-### Nhiệm vụ 2: Độc lập Test với Tester 4 (Chặng 6)
-- Hẹn 1 bạn ngoài nhóm (Tester 4).
-- Cho Tester 4 trải nghiệm đủ cả A, B, C.
-- Quan sát: Họ có thấy thẻ gợi ý tự động nhảy ra là hữu ích hay là phiền toái? Họ bấm nút áp dụng hay bấm nút tắt đi?
-- Tự hoàn thành file `prototype-feedback-note.md` trong repo cá nhân của Huy.
-
-### Nhiệm vụ 3: Tham gia họp nhóm & Nộp bài (Chặng 7 & 8)
-- Đóng góp insight của Tester 4 vào ma trận tổng hợp của nhóm.
-- Đẩy repo cá nhân `Track1_Day18_2A202602421_NguyenQuangHuy`.
+#### 4. Option D (Hỏi người thật kèm bối cảnh - Human Escalation · Quang Huy lead):
+- Mở link: `prototype/index.html#context/theory/D`
+- **Thao tác**: Người học bấm nút **`Tôi vẫn chưa hiểu`** ➔ Một modal hiện lên mang tên *"Nhờ người hỗ trợ"*, AI **tự động điền sẵn các dòng bối cảnh** (Context Chips: Slide 12 đang học, đã dừng 4 phút, câu hỏi nhanh chưa làm/làm sai).
+- Người học có thể chạm để bỏ dòng thông tin không muốn chia sẻ (bảo vệ quyền riêng tư).
+- Người học chọn người nhận: **`TA Hà (Mentor lớp)`** hoặc **`Tuấn (Nhóm Lab)`** ➔ Bấm **`Gửi yêu cầu`** ➔ Mở thanh chat bên phải theo dõi tiến trình gửi (*Đã gửi ➔ Đã xem ➔ Đang trả lời ➔ Đã trả lời* sau 15 giây mô phỏng, có nút *"Vẫn chưa hiểu"* để hỏi sâu hơn).
 
 ---
 
-## ⚡ TỔNG KẾT: CÁCH PHỐI HỢP NHỊP NHÀNG
-1. **Quân** tạo Figma file ngay bây giờ và gửi link cho **Khánh, Anh, Huy**.
-2. **Khánh, Anh, Huy** nhân bản frame và bắt tay vào vẽ **Option A, B, C** theo đúng mô tả ở trên.
-3. Trong lúc chờ vẽ xong, **cả 4 bạn nhắn tin hẹn ngay 4 người bạn ngoài nhóm** để test cho Chặng 6!
+## 🛠️ HƯỚNG DẪN DÙNG TÍNH NĂNG LOGGING TỰ ĐỘNG (LẤY DỮ LIỆU ĐIỀN NOTE)
+
+1. Trong suốt quá trình tester thao tác, hệ thống tự động ghi lại từng hành vi và tính thời gian chính xác (`at`, `opt`, `t`, `evt`, `detail`).
+2. Khi kết thúc phiên test với 1 option hoặc kết thúc cả buổi:
+   - Click vào liên kết **`Facilitator log`** ở thanh đen trên cùng bên phải (hoặc mở `#log`).
+   - Một bảng nhật ký hiện ra hiển thị đầy đủ:
+     - *Mốc thời gian (t)* tính bằng giây từ lúc bắt đầu phương án.
+     - *Tên sự kiện*: `open-help`, `a-select`, `a-send`, `b-answer`, `b-diag`, `c-nudge`, `d-send`, `quick-question`, v.v.
+     - *Chi tiết lựa chọn và số lượt thử*.
+   - Click nút **`Copy dạng CSV`** ➔ Mở file [prototype-feedback-note.md](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/prototype-feedback-note.md) và dán trực tiếp vào mục **OBSERVED**!
+
+---
+
+## 👤 HƯỚNG DẪN HÀNH ĐỘNG CỤ THỂ CHO TỪNG BẠN
+
+### 1. Lại Bá Quân (Lead Option A):
+- Hẹn **Tester 1**, mở `prototype/index.html#context/theory/A`.
+- Đọc Outcome Task: *"Giả sử bạn đang tự học slide Context Window này và cảm thấy bối rối không hiểu vì sao khi chat dài model lại quên. Mục tiêu của bạn là tìm hiểu để trả lời đúng câu hỏi trắc nghiệm ở cuối trang."*
+- Cho Tester 1 thử qua A ➔ B ➔ C ➔ D. Quan sát kỹ phản ứng của tester khi chạm vào khối viền vàng và chọn 3 kiểu giúp của Option A.
+- Bấm `Facilitator log`, click `Copy dạng CSV`.
+- Điền đầy đủ 4 lớp (*Observed, Interpreted, Decided, Still Unproven*) vào [prototype-feedback-note.md](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/prototype-feedback-note.md).
+- Chủ trì cuộc họp nhóm Chặng 7 để điền [group-feedback-synthesis.md](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/group-feedback-synthesis.md).
+
+### 2. Đỗ Lê Việt Anh (Lead Option B):
+- Hẹn **Tester 2**, mở `prototype/index.html#context/theory/B`.
+- Cho Tester 2 thử qua B ➔ A ➔ C ➔ D. Quan sát kỹ: Tester mất bao nhiêu giây trả lời 3 câu hỏi của Option B? Khi chẩn đoán xong, họ có đọc bài ôn và xem đồ thị SVG không? Có bấm nút *"Không đúng chỗ"* không?
+- Lấy CSV log và điền Feedback Note cá nhân của Việt Anh.
+
+### 3. Nguyễn Thị Minh Khánh (Lead Option C):
+- Hẹn **Tester 3**, mở `prototype/index.html#context/theory/C`.
+- Cho Tester 3 thử qua C ➔ A ➔ B ➔ D. Quan sát kỹ: Khi thẻ tự nhắc trượt ra sau 12 giây, tester giật mình hay cảm thấy được hỗ trợ kịp thời? Tester có bấm mở *"Vì sao AI nghĩ vậy"* không? Họ bấm *"Đúng chỗ"*, *"Không phải chỗ này"* hay bấm *"Tắt tự nhắc"*?
+- Lấy CSV log và điền Feedback Note cá nhân của Khánh.
+
+### 4. Nguyễn Quang Huy (Lead Option D):
+- Hẹn **Tester 4**, mở `prototype/index.html#context/theory/D`.
+- Cho Tester 4 thử qua D ➔ A ➔ B ➔ C. Quan sát kỹ: Khi mở modal hỗ trợ, tester có đọc các dòng bối cảnh AI điền sẵn không? Họ chọn gửi cho TA Hà hay Tuấn nhóm Lab? Độ trễ 15s chờ phản hồi có khiến họ muốn chuyển sang ChatGPT không?
+- Lấy CSV log và điền Feedback Note cá nhân của Huy.
+
+---
+
+## ⚡ HỌP NHÓM TỔNG HỢP (CHẶNG 7) & NỘP BÀI (CHẶNG 8)
+- Sau khi cả 4 bạn hoàn thành 4 phiên test, nhóm họp nhanh 15 phút:
+  - Quân mở file [group-feedback-synthesis.md](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/group-feedback-synthesis.md).
+  - Điền 4 cột tương ứng với 4 Tester của Quân, Việt Anh, Minh Khánh, Quang Huy.
+  - So sánh: Option nào được tester đánh giá cao nhất? Trade-off nào khiến họ phân vân?
+  - Chốt **1 Group Next Change duy nhất** cho vòng lặp tiếp theo.
+  - Chốt các điểm **Still Unproven** (những điều 4 phiên test ngắn chưa thể khẳng định).
+- Cập nhật mục 5 trong `README.md`, tự điền nhật ký cá nhân vào `ai-support-log.md` và push code lên GitHub!

@@ -4,48 +4,53 @@
 - **Mã học viên (MHV):** 2A202602495
 - **Họ và tên:** Lại Bá Quân
 - **Tên nhóm:** Tung Tung Tung Sahur
-- **Thành viên trong nhóm (4 người):**
-  1. Lại Bá Quân (2A202602495) - Phụ trách Shared Framework (Common Context 70%, Data Fixture, Shared UI Components, Reset Path & Test Script) & Facilitator Tester 1
-  2. Nguyễn Thị Minh Khánh (2A202602546) - Phụ trách chính Option A: In-line Term Inspector & Facilitator Tester 2
-  3. Đỗ Lê Việt Anh (2A202602491) - Phụ trách chính Option B: 30s Diagnostic Micro-Check & Facilitator Tester 3
-  4. Nguyễn Quang Huy (2A202602421) - Phụ trách chính Option C: Proactive Context Action Card & Facilitator Tester 4
+- **Thành viên trong nhóm & Phân công nhiệm vụ (4 người - mỗi người 1 option):**
+  1. **Lại Bá Quân (2A202602495)**: Phụ trách **Option A (Chỉ vào chỗ kẹt - Inline Inspector & Contextual Help)** & Điều phối Tester 1
+  2. **Đỗ Lê Việt Anh (2A202602491)**: Phụ trách **Option B (Chẩn đoán 3 câu - 3-Question Diagnostic Micro-Quiz)** & Điều phối Tester 2
+  3. **Nguyễn Thị Minh Khánh (2A202602546)**: Phụ trách **Option C (AI gợi ý chủ động - Proactive Nudge Card & Confidence Reasoning)** & Điều phối Tester 3
+  4. **Nguyễn Quang Huy (2A202602421)**: Phụ trách **Option D (Hỏi người thật kèm bối cảnh - Human Escalation & Auto Context Docket)** & Điều phối Tester 4
 - **Case study được chọn:** AI Tutor: Diagnostic Refresher *(Tiếp tục từ Day 17)*
 
 ---
 
 ## 2. HYPOTHESIS PROBLEM
 - **Vấn đề giả định tiếp tục từ Day 17:**  
-  *Học viên trên VLearn gặp bế tắc khi gặp các thuật ngữ viết tắt và khái niệm kỹ thuật trừu tượng trong lúc làm Quiz / thực hành Lab, dẫn đến việc bị đứt mạch học, mất 30–60 phút phải nhảy ra ngoài ném tài liệu vào ChatGPT (với prompt chưa chuẩn nên nhận về câu trả lời lan man), và thường xuyên không hoàn thành được bài học trong 4 tiếng trên lớp.*
+  *Học viên trên VLearn gặp bế tắc khi gặp các khái niệm trừu tượng (như Token, Context Window, Tool Calling, Gradient Descent) và lỗi code trong lúc học Slide lý thuyết / làm Lab, dẫn đến việc bị đứt mạch học, mất 30–60 phút phải nhảy ra ngoài ném tài liệu vào ChatGPT (với prompt chưa chuẩn nên nhận về câu trả lời lan man), và thường xuyên không hoàn thành được bài học trong 4 tiếng trên lớp.*
 - **Bằng chứng thực tế ban đầu hỗ trợ giả thuyết (từ 4 Practice Notes):**  
   - 100% người học được phỏng vấn (4/4) đều sử dụng ChatGPT bên ngoài như một phương án chữa cháy bắt buộc khi không hiểu bài.
   - Hậu quả thực tế được ghi nhận từ 4 người học: Người học trong phiên của Việt Anh mất 30–60 phút tra cứu ngoài; người học trong phiên của Bá Quân thường xuyên không kịp nộp bài trong ca 4 tiếng; người học trong phiên của Quang Huy chịu áp lực lớn vì prompt chưa chuẩn nên AI trả lời lan man; và người học trong phiên của Minh Khánh khẳng định sẽ bỏ sang ChatGPT nếu công cụ bắt chờ quá 3 phút.
 - **Điều quan trọng vẫn chưa được chứng minh:**  
-  - Liệu việc giải thích khái niệm trực tiếp ngay tại bài học (In-context) có thực sự giúp người học hoàn thành bài lab nhanh hơn, hay họ vẫn giữ thói quen copy/paste sang ChatGPT bên ngoài?
+  - Liệu việc đưa sự trợ giúp trực tiếp ngay tại ngữ cảnh bài học (In-context) có thực sự giúp người học hiểu bản chất và làm lab nhanh hơn, hay họ vẫn giữ thói quen copy/paste sang ChatGPT bên ngoài?
 
 ---
 
-## 3. THREE SOLUTION OPTIONS (TÓM TẮT 3 PHƯƠNG ÁN)
-- **Option A (In-line Term Inspector):** Người dùng bôi đen hoặc click vào từ khóa viết tắt "CIDR / VPC" ➔ Popover mở tức thì giải thích ý nghĩa + 1 ví dụ thực tế trong 1 dòng (< 5 giây). *Agency: Don't Act (User-initiated).*
-- **Option B (30s Diagnostic Micro-Check):** Khi làm sai Quiz, AI đưa ra 2 câu trắc nghiệm 1-chạm chẩn đoán điểm hiểu sai ➔ Người dùng bấm chọn nhanh ➔ Nhận tóm tắt đánh trúng điểm nghẽn (< 45 giây). *Agency: Ask (Co-creation).*
-- **Option C (Proactive Context Action Card):** Khi làm sai Quiz hoặc dừng quá lâu, AI tự động đẩy thẻ phân tích lỗi và đề xuất cách sửa code/chọn lại bài. *Agency: Act (Proactive, User Reviews/Dismisses).*
-- **Link trải nghiệm Prototype (A/B/C):** Xem chi tiết tại [prototype-link.md](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/prototype-link.md).
+## 3. FOUR SOLUTION OPTIONS TRONG PROTOTYPE
+*(Hiện thực hóa hoàn chỉnh trong mã nguồn [`prototype/index.html`](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/prototype/index.html))*
+
+- **Option A (Chỉ vào chỗ kẹt - Inline Inspector & Contextual Help - Quân lead):**  
+  Người học bấm nút *"Tôi vẫn chưa hiểu"* ➔ Màn hình hiện Pickbar ở dưới, các đoạn nội dung/code sáng viền vàng ➔ Chạm chọn đoạn chưa hiểu ➔ Chọn kiểu giúp (*"Giải thích dễ hơn"*, *"Cho ví dụ"*, *"Ôn kiến thức nền"*) hoặc tự gõ câu hỏi ➔ AI hiển thị thẻ `icard` giải thích ngay bên dưới đoạn đó kèm link trích dẫn nguồn bài giảng. *Agency: Don't Act (User-initiated).*
+- **Option B (Chẩn đoán 3 câu - 3-Question Diagnostic Micro-Quiz - Việt Anh lead):**  
+  Người học bấm nút *"Tôi vẫn chưa hiểu"* ➔ Side panel trượt ra với 3 câu trắc nghiệm 1 chạm (~1 phút) nhằm kiểm tra kiến thức nền ➔ AI đưa ra thẻ chẩn đoán `dcard` phân loại lỗ hổng tri thức, thang đo độ chắc chắn (*Cao / Trung bình / Thấp*), bài ôn có đồ thị SVG minh hoạ trực quan. Cho phép bấm *"Không đúng chỗ"* để tự chọn chủ đề ôn khác. *Agency: Ask (Co-creation).*
+- **Option C (AI gợi ý chủ động - Proactive Nudge Card & Confidence Reasoning - Minh Khánh lead):**  
+  Hệ thống tự động phát hiện dấu hiệu ngập ngừng (dừng >12 giây trên slide hoặc vừa trả lời sai câu hỏi kiểm tra) ➔ Tự động trượt thẻ `icard nudge` vào đúng khối nghi ngờ kẹt kèm chip tín hiệu hành vi thực tế, mục giải trình minh bạch *"Vì sao AI nghĩ vậy"* và thang đo độ tin cậy. Cho phép bấm *"Đúng chỗ, đã rõ hơn"*, *"Không phải chỗ này"* để chọn lại đoạn bí thật sự, hoặc *"Tắt tự nhắc trong buổi này"*. *Agency: Act (Proactive, User Reviews/Dismisses).*
+- **Option D (Hỏi người thật kèm bối cảnh - Human Escalation & Auto Context Docket - Quang Huy lead):**  
+  Khi AI chưa thỏa mãn: Người học bấm *"Tôi vẫn chưa hiểu"* ➔ Mở modal tự động thu thập bối cảnh học tập (slide/task đang mở, thời gian kẹt, lịch sử trả lời sai) ➔ Người học tick/untick bảo vệ quyền riêng tư, chọn người gửi (*TA Hà - Mentor lớp* hoặc *Tuấn - Nhóm Lab*) ➔ Gửi yêu cầu và theo dõi tiến trình trong side panel (*Đã gửi ➔ Đã xem ➔ Đang trả lời ➔ Đã trả lời* sau 15 giây mô phỏng). *Agency: Suggest (AI drafts context, User edits & sends).*
+- **Link trải nghiệm Prototype:** Xem chi tiết tại [prototype-link.md](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/prototype-link.md). Mở file trực tiếp: [`prototype/index.html`](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/prototype/index.html).
 - **Tài liệu phân tích chi tiết của nhóm:** Xem tại [three-option-design-sheet.md](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/three-option-design-sheet.md).
 
 ---
 
 ## 4. ĐÓNG GÓP CỦA TÔI TRONG NHÓM (MY CONTRIBUTIONS)
-- **Thiết kế & Prototype:**
-  - Đóng góp Note phỏng vấn cá nhân (Note 3) phát hiện thói quen bỏ video sang làm hands-on lab và nỗi đau không hoàn thành lab trong 4 tiếng.
-  - Cùng nhóm thảo luận, bóc tách Fact vs. Diễn giải và chốt Hypothesis Problem, Comparison Contract cho 3 Options.
-  - **Trực tiếp phụ trách xây dựng Shared Framework & Common Context (70% shared core)**:
-    - Thiết lập khung màn hình VLearn với bài toán Quiz mẫu (VPC & CIDR Block) dùng chung cho cả 3 options.
-    - Chuẩn hóa bộ Design Tokens, UI components (Buttons, Typography, State tags, Popovers).
-    - Thiết kế cơ chế Reset trạng thái và tích hợp liên kết điều hướng mượt mà cho 3 Option A, B, C.
-    - Soạn thảo và chuẩn hóa kịch bản Outcome Task & 5 Tiêu điểm quan sát.
-- **Thử nghiệm & Thu thập dữ liệu:**
-  - Trực tiếp điều phối và phỏng vấn độc lập với **Tester 1** (học viên ngoài nhóm) trải nghiệm đủ cả 3 Option A, B, C; hoàn thành bản ghi chép chi tiết [prototype-feedback-note.md](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/prototype-feedback-note.md).
-- **Tổng hợp & Phản biện:**
-  - Cùng nhóm phân tích ma trận 4 testers tại [group-feedback-synthesis.md](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/group-feedback-synthesis.md) và chốt quyết định *Group Next Change*.
+- **Đóng góp Dữ liệu Khảo sát Thực tế (Chặng 1):**
+  - Đóng góp Note phỏng vấn cá nhân (Note 3) từ việc phỏng vấn một học viên tự học Cloud/Dev, phát hiện thói quen bỏ video sang làm hands-on lab và nỗi đau không hoàn thành lab trong 4 tiếng trên lớp.
+  - Cùng nhóm thảo luận, bóc tách Fact vs. Interpretation và đồng thuận chốt Hypothesis Problem, Comparison Contract cho 4 options.
+- **Thiết kế & Triển khai Phương án Phụ trách (Lead Option A - Chặng 2, 3, 4):**
+  - **Trực tiếp thiết kế và làm chủ Option A (Chỉ vào chỗ kẹt - Inline Inspector)**: Xác định tương tác chạm khối văn bản/code viền vàng, thanh Pickbar chọn 3 chế độ trợ giúp (*Giải thích dễ hơn, Cho ví dụ, Ôn kiến thức nền*), cơ chế tự soạn câu hỏi và in-line card giải thích ngay tại chỗ với link trích dẫn slide gốc.
+  - Phối hợp cùng 3 thành viên (Việt Anh phụ trách Opt B, Minh Khánh phụ trách Opt C, Quang Huy phụ trách Opt D) hiện thực hóa trọn vẹn 4 phương án vào web micro-prototype độc lập tại [`prototype/index.html`](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/prototype/index.html) với 3 chủ đề kiến thức (*Context Window*, *ReAct Agent*, *Gradient Descent*), bộ đo logging tự động và nút Copy CSV.
+- **Thử nghiệm & Thu thập dữ liệu Người dùng (Chặng 6):**
+  - Trực tiếp điều phối và phỏng vấn độc lập với **Tester 1** (học viên ngoài nhóm) trải nghiệm qua các options; ghi nhận phản ứng với Option A và các phương án so sánh, trích xuất log CSV khách quan vào [prototype-feedback-note.md](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/prototype-feedback-note.md).
+- **Tổng hợp & Phản biện Quyết định Nhóm (Chặng 7):**
+  - Cùng nhóm tổng hợp ma trận 4 testers tại [group-feedback-synthesis.md](file:///c:/Users/Vxtor/Documents/workspace/ai20k/Track1_Day18_02495_LaiBaQuan/group-feedback-synthesis.md) và chốt quyết định *Group Next Change*.
 
 ---
 
